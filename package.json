@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:preview": "node preview/build.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.0.0",
@@ -24,6 +25,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/three": "^0.170.0",
+    "esbuild": "^0.24.2",
     "typescript": "^5.6.0"
   }
 }
