@@ -1,0 +1,11 @@
+/* Cosmic palette UI basics (Spec §3.2). Colours mirror config/palette.ts. */
+html, body { margin: 0; background: #000; color: #00ff41; font-family: ui-monospace, Menlo, Consolas, monospace; }
+* { box-sizing: border-box; }
+.ic-btn {
+  background: #000; color: #00ff41; border: 1px solid #00ff41; border-radius: 6px;
+  padding: 12px 20px; font: inherit; font-size: 16px; cursor: pointer; min-width: 140px;
+}
+.ic-btn:hover, .ic-btn:focus-visible { background: #00ff41; color: #000; outline: none; }
+.ic-btn:disabled { opacity: 0.4; cursor: default; background: #000; color: #00ff41; }
+.ic-btn.ic-secondary { border-color: #6b3a5b; color: #ffffff; }
+.ic-btn.ic-secondary:hover { background: #6b3a5b; color: #ffffff; }
