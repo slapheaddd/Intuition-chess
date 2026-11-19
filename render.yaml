@@ -1,0 +1,17 @@
+# Render Blueprint: deploys the real game (Next.js server + Stockfish) as one web service.
+# Free plan: the service sleeps when idle (first visit after that takes ~1 minute) and its
+# disk is temporary, so saved games and the STUB slap balances reset on each restart/deploy.
+services:
+  - type: web
+    name: intuition-chess
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /chess
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: CHESS_DATA_DIR        # where games + STUB balances are written (temporary on free plan)
+        value: /tmp/intuition-chess-data

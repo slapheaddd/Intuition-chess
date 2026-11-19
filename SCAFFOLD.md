@@ -56,3 +56,11 @@ Rules: server checks every move; no Vault ID anywhere (games keyed to prize_tag)
 - Shape of the flights (pull-back, chase offsets, lift height, glow, streaks): TRANSITION in config.
 - Development builds expose window.__icFlightSpeed / __icFlights / __icFlightState for automated tests;
   production builds strip them.
+
+## Online (Render)
+- `render.yaml` deploys the real game: build `npm ci && npm run build`, start `npm start`
+  (Next.js reads Render's PORT). Open `/chess` on the service URL.
+- Free plan: sleeps when idle; disk is temporary, so games and STUB slap balances reset on restart.
+  For lasting data, use a paid plan with a persistent disk and point CHESS_DATA_DIR at it
+  (or replace the file storage when merging into Bumphead).
+- Anyone with the URL can play: the dev session stub gives each browser its own test prize_tag.
